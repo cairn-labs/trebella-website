@@ -21,8 +21,27 @@ h6 {
     font-weight: 700;
 }
 
+img.logo {
+    height: 42px;
+    margin-top: 4px;
+}
+
+.navbar {
+    min-height: 70px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #5a2ca0;
+}
+.navbar-collapse {
+    padding-top: 10px;
+}
+.navbar-header {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -110,7 +129,7 @@ h6 {
 .section-heading-spacer {
     float: left;
     width: 200px;
-    border-top: 3px solid #e7e7e7;
+    border-top: 3px solid #5a2ca0;
 }
 
 .banner {
