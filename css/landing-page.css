@@ -132,7 +132,7 @@ img.logo {
 }
 
 .section-heading-spacer {
-    float: left;
+    float: center;
     width: 200px;
     border-top: 3px solid #5a2ca0;
 }
