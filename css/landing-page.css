@@ -45,6 +45,7 @@ img.logo {
 }
 
 .lead {
+    color: #000000;
     font-size: 18px;
     font-weight: 400;
 }
@@ -54,8 +55,6 @@ img.logo {
     padding-bottom: 150px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg-wide.jpg) no-repeat center top;
-    background-size: cover;
 }
 
 .intro-message {
@@ -111,6 +110,11 @@ img.logo {
     letter-spacing: 2px;
 }
 
+.content-section-video {
+    padding-bottom: 50px;
+    background-color: #f8f8f8;
+}
+
 .content-section-a {
     padding: 50px 0;
     background-color: #f8f8f8;
@@ -124,6 +128,7 @@ img.logo {
 
 .section-heading {
     margin-bottom: 30px;
+    color: #000000;
 }
 
 .section-heading-spacer {
@@ -186,4 +191,28 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+#video-container {
+    min-height: 1080px;
+    min-width: 100%; 
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+#video-background {
+  position: absolute;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: 1;
+}
+
+#video-background.collapsing {
+  display:none;
 }
