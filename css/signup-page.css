@@ -37,7 +37,7 @@ body {
 
 /* Customize container */
 @media (min-width: 768px) {
-    .container {
+    .signup_container {
         max-width: 730px;
     }
 }
