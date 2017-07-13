@@ -78,6 +78,19 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         document.getElementById('email-invalid').style.color = '#333333';
         return false;
     } else {
+        // reset form
+        document.getElementById('gform').reset();
+        // show thank you message first
+        // show thank you message for 5 sec
+        document.getElementById('thankyou-message').style.display = 'block';
+        document.getElementById('thankyou-message').style.color = '#333333';
+
+        function hideThankYou(){
+            document.getElementById('thankyou-message').style.display = 'none';
+            //document.getElementById('thankyou-message').style.color = '#333333';
+        }
+        window.setTimeout(hideThankYou, 5000);
+
         var url = event.target.action;  //
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
@@ -87,18 +100,6 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
             console.log( xhr.status, xhr.statusText )
             console.log(xhr.responseText);
             //document.getElementById('gform').style.display = 'none';
-            // reset form
-            document.getElementById('gform').reset();
-            // show thank you message for 5 sec
-            document.getElementById('thankyou-message').style.display = 'block';
-            document.getElementById('thankyou-message').style.color = '#333333';
-
-            function hideThankYou(){
-                document.getElementById('thankyou-message').style.display = 'none';
-                //document.getElementById('thankyou-message').style.color = '#333333';
-            }
-            window.setTimeout(hideThankYou, 5000);
-
             //document.getElementById('signup-header').style.display = 'none';
             //document.getElementById('signup-header').style.color = '#333333';
             return;
