@@ -86,12 +86,21 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         xhr.onreadystatechange = function() {
             console.log( xhr.status, xhr.statusText )
             console.log(xhr.responseText);
-            // hide form, show thank you message, hide header
-            document.getElementById('gform').style.display = 'none';
+            //document.getElementById('gform').style.display = 'none';
+            // reset form
+            document.getElementById('gform').reset();
+            // show thank you message for 5 sec
             document.getElementById('thankyou-message').style.display = 'block';
             document.getElementById('thankyou-message').style.color = '#333333';
-            document.getElementById('signup-header').style.display = 'none';
-            document.getElementById('signup-header').style.color = '#333333';
+
+            function hideThankYou(){
+                document.getElementById('thankyou-message').style.display = 'none';
+                //document.getElementById('thankyou-message').style.color = '#333333';
+            }
+            window.setTimeout(hideThankYou, 5000);
+
+            //document.getElementById('signup-header').style.display = 'none';
+            //document.getElementById('signup-header').style.color = '#333333';
             return;
         };
         // url encode form data for sending as post data
