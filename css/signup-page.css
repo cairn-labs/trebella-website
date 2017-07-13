@@ -6,6 +6,10 @@
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+
+    / * for Sticky Footer */
+    height: 100%;
+    margin: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -33,6 +37,11 @@ body {
     padding-top: 19px;
     color: #777;
     border-top: 1px solid #e5e5e5;
+
+    /* for Sticky footer */
+    height: '50px';
+
+.footer,
 }
 
 /* Customize container */
@@ -80,4 +89,15 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+/* Sticky Footer */
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
 }
