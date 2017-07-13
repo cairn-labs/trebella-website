@@ -88,7 +88,8 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
             console.log(xhr.responseText);
             document.getElementById('gform').style.display = 'none'; // hide form
             // no idea what this does, seems unimportant, causes console err.
-            //document.getElementById('thankyou_message').style.display = 'block';
+            document.getElementById('thankyou-message').style.display = 'block';
+        document.getElementById('thankyou-message').style.color = '#333333';
             return;
         };
         // url encode form data for sending as post data
