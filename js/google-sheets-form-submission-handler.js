@@ -10,12 +10,15 @@ function validEmail(email) { // see:
 function getFormData() {
     var elements = document.getElementById("gform").elements; // all form elements
 
-    console.log('elements ', elements);
+    //console.log('elements ', elements);
 
     var fields = Object.keys(elements).map(function(k) {
-        console.log('map fields, elements, key k ', k);
-        if(elements[k].name !== undefined) {
-            console.log('if elements of key k has a defined name prop ', elements[k].name);
+        //console.log('map fields, elements, key k ', k);
+        //console.log('element k.name - ', elements[k].name);
+        //console.log('element k - ', elements[k]);
+
+        if(elements[k].name !== undefined && elements[k].name.length) {
+            //console.log('if elements of key k has a defined name prop ', elements[k].name);
             return elements[k].name;
             // special case for Edge's html collection
         }
@@ -24,14 +27,14 @@ function getFormData() {
             return elements[k].item(0).name;
         }
     }).filter(function(item, pos, self) {
-        console.log('getFormData() filter - item - ', item);
-        console.log('getFormData() filter - pos - ', pos);
-        console.log('getFormData() filter - self - ', self);
-
-        return self.indexOf(item) == pos && item;
+        // get rid of dupes
+        return self.indexOf(item) == pos;
+    }).filter(function(item, pos, self){
+        // get rid of undefined
+        return item != undefined;
     });
 
-    console.log('fields ', elements);
+    console.log('fields ', fields);
 
     var data = {};
     fields.forEach(function(k){
@@ -63,7 +66,6 @@ function getFormData() {
 
     console.log('data ', data);
 
-    console.log(data);
     return data;
 }
 
