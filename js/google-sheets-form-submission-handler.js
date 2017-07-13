@@ -6,19 +6,20 @@ function validEmail(email) { // see:
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     return re.test(email);
 }
+
+// fieldsWhitelist
+var fieldsWhitelist = {
+    name: true,
+    email: true,
+};
+
 // get all data in form and return object
 function getFormData() {
     var elements = document.getElementById("gform").elements; // all form elements
 
-    //console.log('elements ', elements);
-
     var fields = Object.keys(elements).map(function(k) {
-        //console.log('map fields, elements, key k ', k);
-        //console.log('element k.name - ', elements[k].name);
-        //console.log('element k - ', elements[k]);
-
-        if(elements[k].name !== undefined && elements[k].name.length) {
-            //console.log('if elements of key k has a defined name prop ', elements[k].name);
+        var name = elements[k].name;
+        if(name !== undefined && name.length && fieldsWhitelist[name]) {
             return elements[k].name;
             // special case for Edge's html collection
         }
@@ -85,7 +86,8 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
             console.log( xhr.status, xhr.statusText )
             console.log(xhr.responseText);
             document.getElementById('gform').style.display = 'none'; // hide form
-            document.getElementById('thankyou_message').style.display = 'block';
+            // no idea what this does, seems unimportant, causes console err.
+            //document.getElementById('thankyou_message').style.display = 'block';
             return;
         };
         // url encode form data for sending as post data
